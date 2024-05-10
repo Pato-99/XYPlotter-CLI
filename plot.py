@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import serial
 import sys
 from tqdm import tqdm
@@ -10,15 +12,6 @@ def wait_for_ok():
     message = ser.readline().decode().strip()
     if message == "OK" or message == "ERR":
         return message
-
-
-def insert_dwell(lines, delay_ms):
-    tmp_lines = []
-    for line in lines:
-        if line.startswith('M'):
-            tmp_lines.append(f"G4 P{delay_ms};")
-        tmp_lines.append(line)
-    return tmp_lines
 
 
 try:
