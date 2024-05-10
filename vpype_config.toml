@@ -1,0 +1,12 @@
+[gwrite.xyplotter]
+unit = "mm"
+scale_y = -1  # plotter has origin in top-left corner
+document_end = """M3;
+G4 P120;
+G01 X0 Y0;\n"""
+segment_first = """M3
+G4 P120;
+G00 X{x:.4f} Y{y:.4f};
+M4;
+G4 P120;\n"""
+segment = """G00 X{x:.4f} Y{y:.4f};\n"""
