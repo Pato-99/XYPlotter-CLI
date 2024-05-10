@@ -22,6 +22,7 @@ read svg/mfprague-logo.svg \
 linesort \
 scale -o 0 0 0.5 0.5 \
 translate 20mm 20mm \
+linesort \
 gwrite -p xyplotter gcode/mfprague-logo.gcode
 
 # Benchmark sample
